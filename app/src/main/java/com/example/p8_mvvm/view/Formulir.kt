@@ -85,6 +85,7 @@ fun FormIsian(
                                 txtGender =item
                             }
                         )
+                        Text(text = item)
                     }
                 }
             }
