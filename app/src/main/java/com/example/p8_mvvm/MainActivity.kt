@@ -17,29 +17,17 @@ import androidx.navigation.compose.rememberNavController
 import com.example.p8_mvvm.ui.theme.P8_MVVMTheme
 import com.example.p8_mvvm.view.FormIsian
 import com.example.p8_mvvm.view.TampilData
+import com.example.p8_mvvm.view.uicontroller.SiswaApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val nav = rememberNavController()
 
-            NavHost(navController = nav, startDestination = "form"){
-                composable("form"){
-                    FormIsian(
-                        OnSubmitBtnClick = {nav.navigate("tampil")}
-                    )
-                }
-                composable("tampil"){
-                    TampilData(
-                        onBackBtnClick = {nav.navigate("form")}
-                    )
-                }
             }
         }
     }
-}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {

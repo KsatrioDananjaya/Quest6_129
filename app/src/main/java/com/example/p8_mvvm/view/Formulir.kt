@@ -36,7 +36,7 @@ import com.example.p8_mvvm.R
 @Composable
 fun FormIsian(
     pilihanJK: List<String>,
-    OnSubmitBtnClicked : (MutableList<String>) -> Unit,
+    onSubmitBtnClicked : (MutableList<String>) -> Unit,
     modifier: Modifier = Modifier
 ){
     var txtNama by rememberSaveable { mutableStateOf("") }
@@ -109,7 +109,7 @@ fun FormIsian(
                 modifier = Modifier.fillMaxWidth(1f)
                     .padding(all = 25.dp),
                 enabled = txtAlamat.isNotEmpty(),
-                onClick = {OnSubmitBtnClicked(listData)}
+                onClick = {onSubmitBtnClicked(listData)}
             ) {
                 Text(stringResource(id = R.string.submit))
             }
