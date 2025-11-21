@@ -69,12 +69,14 @@ fun FormIsian(
                 .padding(20.dp)
                 .width(250.dp), thickness = Thickness, color = Color.Red)
             Row {
-                jenisK.forEach {
+                pilihanJK.forEach {
                         item ->
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         RadioButton(
-                            selected = false,
-                            onClick = {item}
+                            selected = txtGender == item,
+                            onClick = {
+                                txtGender = item
+                            }
                         )
                         Text(text = item)
                     }
