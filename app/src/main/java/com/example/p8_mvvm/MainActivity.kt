@@ -24,6 +24,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            P8_MVVMTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    SiswaApp(
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
 
             }
         }
