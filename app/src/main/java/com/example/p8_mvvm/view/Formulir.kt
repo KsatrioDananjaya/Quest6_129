@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
 import androidx.compose.material3.DividerDefaults.Thickness
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -71,14 +72,15 @@ fun FormIsian(
             Row {
                 pilihanJK.forEach {
                         item ->
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(modifier = Modifier.selectable(
+                        selected = txtGender == item,
+                        onClick = {
+                            txtGender = item
+                        }
+                    ),
+                        verticalAlignment = Alignment.CenterVertically) {
                         RadioButton(
-                            selected = txtGender == item,
-                            onClick = {
-                                txtGender = item
-                            }
                         )
-                        Text(text = item)
                     }
                 }
             }
